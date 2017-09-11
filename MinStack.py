@@ -5,7 +5,7 @@ class MinStack(object):
         initialize your data structure here.
         """
         self.stack = []
-        self.minstack = []
+        self.minstack = []  #use another stack to put the current smallest value
 
     def push(self, x):
         """
@@ -13,7 +13,7 @@ class MinStack(object):
         :rtype: void
         """
         self.stack.append(x)
-        if len(self.minstack) == 0 or x <= self.minstack[-1]:
+        if len(self.minstack) == 0 or x <= self.minstack[-1]:      #judge if the element pushed is smaller than previous min
             self.minstack.append(x)
 
     def pop(self):

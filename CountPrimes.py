@@ -2,7 +2,7 @@ class Solution:
 # @param {integer} n
 # @return {integer}
 def countPrimes(self, n):
-    if n < 3:      #since <n. 1(not prime) and 2(prime, but description ask <n) 
+    if n < 3:      #since <n. 1(not prime) and 2(prime, but description ask for <n) 
         return 0
     primes = [True] * n
     primes[0] = primes[1] = False

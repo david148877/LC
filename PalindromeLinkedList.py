@@ -6,7 +6,6 @@ For linked list 1->2->3->2->1, the code below first makes the list to be 1->2->3
 
 
 
-
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
@@ -28,16 +27,41 @@ class Solution:
             fast = fast.next.next
         #reverse second half
         p = slow.next 
-        last = None
-        while p:                #slow.next exsits means there is one step to the end of the linked list
+        last = None    
+        slow.next = None        #not needed, but clearer
+        '''
+        last is before the second half
+        (a none insert into the beginning of the second half )     
+        1->2->3->4->5->6->7  => none->5->6->7
+        then we can reverse the second half like reverse linked list problem
+        '''
+        
+        '''
+        <Stephen>
+        def reverseLinkedListIterative(self, head):
+            if not head or not head.next: return None
+            preCurrent = None
+            currentNode = head
+            while currentNode:
+                nextNode = currentNode.next
+                currentNode.next = preCurrent
+                preCurrent = currentNode
+                currentNode = nextNode
+            return preCurrent
+
+        '''
+        while p:               #p equals to currentNode above
             next = p.next
             p.next = last
-            last = p
+            last = p           #last equals to preCurrent above 
             p = next
         #check palindrome
-        p1, p2 = last, head
+        p1 = last
+        p2 = head
         while p1 and p1.val == p2.val:
             p1, p2 = p1.next, p2.next
+            
+            
         #resume linked list(optional)
         p, last = last, None
         while p:
@@ -46,3 +70,4 @@ class Solution:
             last, p = p, next
         slow.next = last
         return p1 is None
+

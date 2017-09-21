@@ -15,6 +15,7 @@ class Solution(object):
             return None
         if not head.next: 
             return head
+        #above two if statements must be earlier than later three statements. Since later three affects above statements.
         
         previous = None
         current = head

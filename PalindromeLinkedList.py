@@ -17,19 +17,23 @@ class Solution:
     # @param {ListNode} head
     # @return {boolean}
     def isPalindrome(self, head):
-        if head is None:
+        if not head:
             return True
+        
         #find mid node
         fast = slow = head
-        while fast.next and fast.next.next:
+        
+        while fast.next and fast.next.next:   #set up fast speeds is twice to slow
             slow = slow.next
             fast = fast.next.next
         #reverse second half
-        p, last = slow.next, None
-        while p:
+        p = slow.next 
+        last = None
+        while p:                #slow.next exsits means there is one step to the end of the linked list
             next = p.next
             p.next = last
-            last, p = p, next
+            last = p
+            p = next
         #check palindrome
         p1, p2 = last, head
         while p1 and p1.val == p2.val:

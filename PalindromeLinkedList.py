@@ -62,6 +62,7 @@ class Solution:
             p1, p2 = p1.next, p2.next
             
         '''
+        <Stephen>
         #check palindrome
         p1, p2 = last, head
         while p1 :

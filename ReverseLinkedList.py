@@ -22,6 +22,7 @@ class Solution(object):
         while preceding:
             current.next = previous
             previous = current
+            current = preceding
             preceding = preceding.next
             
         current.next = previous

@@ -61,7 +61,17 @@ class Solution:
         while p1 and p1.val == p2.val:
             p1, p2 = p1.next, p2.next
             
-            
+        '''
+        #check palindrome
+        p1, p2 = last, head
+        while p1 :
+            if not (p1.val == p2.val): return False
+            p1, p2 = p1.next, p2.next
+        return True
+
+        '''
+        
+        
         #resume linked list(optional)
         p, last = last, None
         while p:

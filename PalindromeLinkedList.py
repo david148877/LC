@@ -1,3 +1,12 @@
+'''
+For linked list 1->2->3->2->1, the code below first makes the list to be 1->2->3->2<-1 and the second 2->None, then make 3->None, for even number linked list: 1->2->2->1, make first 1->2->2<-1 and then the second 2->None, and lastly do not forget to make the first 2->None 
+(If forget it still works while the idea behind is a little bit different).
+
+'''
+
+
+
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):

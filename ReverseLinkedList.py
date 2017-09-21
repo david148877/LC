@@ -10,14 +10,15 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        previous = None
-        current = first
-        preceding = first.next
         
         if not head:
             return None
         if not head.next: 
             return head
+        
+        previous = None
+        current = head
+        preceding = head.next
         
         while preceding:
             current.next = previous
@@ -26,12 +27,6 @@ class Solution(object):
             preceding = preceding.next
             
         current.next = previous
-        first = current
+        head = current
         
-        return first
-        
-       
-
-    
-
-    
+        return head

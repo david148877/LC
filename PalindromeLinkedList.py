@@ -45,7 +45,7 @@ class Solution:
             while currentNode:
                 nextNode = currentNode.next
                 currentNode.next = preCurrent
-                preCurrent = currentNode
+                preCurrent = currentNode        #so after reversing the list. the preCurrent node is the first node of the reversed list.(iterative)
                 currentNode = nextNode
             return preCurrent
 
@@ -55,24 +55,20 @@ class Solution:
             p.next = last
             last = p           #last equals to preCurrent above 
             p = next
+        #check palindrome    
+        
+        
         #check palindrome
-        p1 = last
+        p1 = last   #since iterate last to the "last" node of the origin node, last is the last node of the original list 
         p2 = head
-        while p1 and p1.val == p2.val:
-            p1, p2 = p1.next, p2.next
-            
-        '''
-        <Stephen>
-        #check palindrome
-        p1, p2 = last, head
         while p1 :
             if not (p1.val == p2.val): return False
             p1, p2 = p1.next, p2.next
         return True
 
+        
+        
         '''
-        
-        
         #resume linked list(optional)
         p, last = last, None
         while p:
@@ -81,4 +77,4 @@ class Solution:
             last, p = p, next
         slow.next = last
         return p1 is None
-
+        '''
